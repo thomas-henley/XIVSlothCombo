@@ -45,7 +45,6 @@ namespace XIVSlothCombo.Combos.PvE
             TsubameGaeshi = 16483,
             KaeshiHiganbana = 16484,
             Shoha = 16487,
-            Shoha2 = 25779,
             Ikishoten = 16482,
             Fuko = 25780,
             OgiNamikiri = 25781,
@@ -682,8 +681,8 @@ namespace XIVSlothCombo.Combos.PvE
                         if (IsEnabled(CustomComboPreset.SAM_AoE_Overcap) && gauge.Kenki >= SamAOEKenkiOvercapAmount && LevelChecked(Kyuten))
                             return Kyuten;
 
-                        if (IsEnabled(CustomComboPreset.SAM_AoE_MangetsuCombo_Shoha2) && LevelChecked(Shoha2) && gauge.MeditationStacks == 3)
-                            return Shoha2;
+                        if (IsEnabled(CustomComboPreset.SAM_AoE_MangetsuCombo_Shoha) && LevelChecked(Shoha) && gauge.MeditationStacks == 3)
+                            return Shoha;
 
                         if (IsEnabled(CustomComboPreset.SAM_AoE_MangetsuCombo_MeikyoShisui) && LevelChecked(MeikyoShisui) && !HasEffect(Buffs.MeikyoShisui) && GetRemainingCharges(MeikyoShisui) > 0)
                             return MeikyoShisui;
@@ -905,20 +904,20 @@ namespace XIVSlothCombo.Combos.PvE
             }
         }
 
-        internal class SAM_Kyuten_Shoha2_Guren : CustomCombo
+        internal class SAM_Kyuten_Shoha_Guren : CustomCombo
         {
-            protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.SAM_Kyuten_Shoha2;
+            protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.SAM_Kyuten_Shoha;
 
             protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
             {
                 var gauge = GetJobGauge<SAMGauge>();
                 if (actionID == Kyuten)
                 {
-                    if (IsEnabled(CustomComboPreset.SAM_Kyuten_Shoha2_Guren) && IsOffCooldown(Guren) && Guren.LevelChecked())
+                    if (IsEnabled(CustomComboPreset.SAM_Kyuten_Shoha_Guren) && IsOffCooldown(Guren) && Guren.LevelChecked())
                         return Guren;
 
-                    if (IsEnabled(CustomComboPreset.SAM_Kyuten_Shoha2) && gauge.MeditationStacks == 3 && Shoha2.LevelChecked())
-                        return Shoha2;
+                    if (IsEnabled(CustomComboPreset.SAM_Kyuten_Shoha) && gauge.MeditationStacks == 3 && Shoha.LevelChecked())
+                        return Shoha;
                 }
 
                 return actionID;
