@@ -410,9 +410,9 @@ namespace XIVSlothCombo.Combos.PvE
                                     return HolySpirit;
                             }
                             
-                            // New Spell after Confi Combo (Weave) -- Maybe need an option for advanced mode - currently only available after blade combo.
-                            //if ((IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_Blades) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)))
-                            //    return OriginalHook(Requiescat);
+                            // Blades of Honor after Confi Combo (Weave).
+                            if ((IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_BladesOfHonor) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)))
+                                return OriginalHook(Requiescat);
 
                             // HS under DM
                             if (IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_HolySpirit) &&
@@ -454,10 +454,10 @@ namespace XIVSlothCombo.Combos.PvE
                         //Req without FoF
                         if (IsNotEnabled(CustomComboPreset.PLD_ST_AdvancedMode_FoF) && (IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_Requiescat) && CanWeave(actionID)) && ActionReady(Requiescat))
                             return OriginalHook(Requiescat);
-                        
-                        //// New Spell after Confi Combo (Weave) -- Maybe need an option for advanced mode - currently only available after blade combo.
-                        //if ((IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_Blades) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)) && IsNotEnabled(CustomComboPreset.PLD_ST_AdvancedMode_FoF))
-                        //    return OriginalHook(Requiescat);
+
+                        // Blades of Honor after Confi Combo (Weave).
+                        if ((IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_BladesOfHonor) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)) && IsNotEnabled(CustomComboPreset.PLD_ST_AdvancedMode_FoF))
+                            return OriginalHook(Requiescat);
                         
                         
                         // Confiteor & Blades
@@ -592,9 +592,9 @@ namespace XIVSlothCombo.Combos.PvE
                                 return HolyCircle;
 
                         }
-                        
-                        // New Spell after Confi Combo (Weave) -- Maybe need an option for advanced mode - currently only available after blade combo.
-                        if ((IsEnabled(CustomComboPreset.PLD_AoE_AdvancedMode_Blades) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)))
+
+                        // Blades of Honor after Confi Combo (Weave).
+                        if ((IsEnabled(CustomComboPreset.PLD_AoE_AdvancedMode_BladesOfHonor) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)))
                             return OriginalHook(Requiescat);
 
                         // HC under DM/Req
@@ -640,9 +640,9 @@ namespace XIVSlothCombo.Combos.PvE
                         GetResourceCost(OriginalHook(Confiteor)) <= LocalPlayer.CurrentMp)) &&
                         IsNotEnabled(CustomComboPreset.PLD_AoE_AdvancedMode_FoF))
                         return OriginalHook(Confiteor);
-                    
-                    // New Spell after Confi Combo (Weave) -- Maybe need an option for advanced mode - currently only available after blade combo.
-                    if ((IsEnabled(CustomComboPreset.PLD_AoE_AdvancedMode_Blades) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)))
+
+                    // Blades of Honor after Confi Combo (Weave).
+                    if ((IsEnabled(CustomComboPreset.PLD_AoE_AdvancedMode_BladesOfHonor) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)))
                         return OriginalHook(Requiescat);
 
                     // HS under DM (outside of burst)
