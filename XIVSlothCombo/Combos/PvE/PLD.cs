@@ -411,8 +411,8 @@ namespace XIVSlothCombo.Combos.PvE
                             }
                             
                             // New Spell after Confi Combo (Weave) -- Maybe need an option for advanced mode - currently only available after blade combo.
-                            if ((IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_Blades) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)))
-                                return OriginalHook(Requiescat);
+                            //if ((IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_Blades) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)))
+                            //    return OriginalHook(Requiescat);
 
                             // HS under DM
                             if (IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_HolySpirit) &&
@@ -455,9 +455,9 @@ namespace XIVSlothCombo.Combos.PvE
                         if (IsNotEnabled(CustomComboPreset.PLD_ST_AdvancedMode_FoF) && (IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_Requiescat) && CanWeave(actionID)) && ActionReady(Requiescat))
                             return OriginalHook(Requiescat);
                         
-                        // New Spell after Confi Combo (Weave) -- Maybe need an option for advanced mode - currently only available after blade combo.
-                        if ((IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_Blades) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)) && IsNotEnabled(CustomComboPreset.PLD_ST_AdvancedMode_FoF))
-                            return OriginalHook(Requiescat);
+                        //// New Spell after Confi Combo (Weave) -- Maybe need an option for advanced mode - currently only available after blade combo.
+                        //if ((IsEnabled(CustomComboPreset.PLD_ST_AdvancedMode_Blades) && CanWeave(actionID) && HasEffect(Buffs.BladeOfHonor)) && IsNotEnabled(CustomComboPreset.PLD_ST_AdvancedMode_FoF))
+                        //    return OriginalHook(Requiescat);
                         
                         
                         // Confiteor & Blades
