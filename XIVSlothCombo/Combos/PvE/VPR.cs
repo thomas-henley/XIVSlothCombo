@@ -995,12 +995,41 @@ namespace XIVSlothCombo.Combos.PvE
                             return OriginalHook(Twinblood);
                     }
 
-                    // Vicewinder Combo
-                    if (LevelChecked(Vicewinder))
+                    if (positionalChoice is 0)
                     {
-                        // Swiftskin's Coil
-                        if ((VicewinderReady && (!OnTargetsFlank() || !TargetNeedsPositionals())) || HuntersCoilReady)
+                        if (SwiftskinsCoilReady)
+                        {
+                            if (IsEnabled(CustomComboPreset.VPR_VicewinderCoilsTN) &&
+                                    trueNorthReady && !OnTargetsFlank())
+                                return All.TrueNorth;
+
+                            return HuntersCoil;
+                        }
+
+                        if (VicewinderReady)
+                        {
+                            if (IsEnabled(CustomComboPreset.VPR_VicewinderCoilsTN) &&
+                                trueNorthReady && !OnTargetsRear())
+                                return All.TrueNorth;
                             return SwiftskinsCoil;
+                        }
+                    }
+
+                    if (positionalChoice is 1)
+                    {
+                        if (HuntersCoilReady)
+                        {
+                            if (IsEnabled(CustomComboPreset.VPR_VicewinderCoilsTN) &&
+                                trueNorthReady && !OnTargetsRear())
+                                return All.TrueNorth;
+                            return SwiftskinsCoil;
+                        }
+
+                        if (VicewinderReady)
+                        {
+                            if (IsEnabled(CustomComboPreset.VPR_VicewinderCoilsTN) &&
+                                    trueNorthReady && !OnTargetsFlank())
+                                return All.TrueNorth;
 
                         // Hunter's Coil
                         if ((VicewinderReady && (!OnTargetsRear() || !TargetNeedsPositionals())) || SwiftskinsCoilReady)
