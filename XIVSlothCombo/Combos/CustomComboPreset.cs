@@ -3932,6 +3932,14 @@ namespace XIVSlothCombo.Combos
         [CustomComboInfo("Primal Combo Feature", "Turns Inner Release into the Primal combo on use.", WAR.JobID, 3, "", "")]
         WAR_PrimalCombo_InnerRelease = 18032,
 
+        [ReplaceSkill(WAR.Upheaval)]
+        [CustomComboInfo("Upheaval to Inner Release Feature", "Puts Inner Release and Upheaval on one button.", WAR.JobID, 5, "", "")]
+        PLD_Upheaval_IR = 18033,
+
+        [ReplaceSkill(WAR.Upheaval)]
+        [CustomComboInfo("Orogeny to Inner Release Feature", "Puts Inner Release and Orogeny on one button.", WAR.JobID, 5, "", "")]
+        PLD_Orogeny_IR = 18034,
+
         [ParentCombo(WAR_InfuriateFellCleave)]
         [CustomComboInfo("Inner Release Priority Option", "Prevents the use of Infuriate while you have Inner Release stacks available.", WAR.JobID)]
         WAR_InfuriateFellCleave_IRFirst = 18022,

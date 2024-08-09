@@ -359,5 +359,55 @@ namespace XIVSlothCombo.Combos.PvE
                 return actionID;
             }
         }
+
+
+
+        internal class WAR_Upheaval_IR : CustomCombo
+        {
+            protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.PLD_Upheaval_IR;
+
+            protected override uint Invoke(uint actionID, uint lastComboActionID, float comboTime, byte level)
+            {
+                if (actionID is Upheaval)
+                {
+                    if (HasEffect(Buffs.Wrathful))
+                    {
+                        return PrimalWrath;
+                    }
+                    if (ActionReady(InnerRelease))
+                    {
+                        return InnerRelease;
+                    }
+
+                    return Upheaval;
+                }
+
+                return actionID;
+            }
+        }
+
+        internal class WAR_Orogeny_IR : CustomCombo
+        {
+            protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.PLD_Upheaval_IR;
+
+            protected override uint Invoke(uint actionID, uint lastComboActionID, float comboTime, byte level)
+            {
+                if (actionID is Orogeny)
+                {
+                    if (HasEffect(Buffs.Wrathful))
+                    {
+                        return PrimalWrath;
+                    }
+                    if (ActionReady(InnerRelease))
+                    {
+                        return InnerRelease;
+                    }
+
+                    return Orogeny;
+                }
+
+                return actionID;
+            }
+        }
     }
 }
