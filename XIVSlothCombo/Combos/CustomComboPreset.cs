@@ -3228,10 +3228,10 @@ namespace XIVSlothCombo.Combos
         SAM_AoE_MangetsuCombo_OgiNamikiri = 15023,
 
         [ParentCombo(SAM_AoE_MangetsuCombo)]
-        [CustomComboInfo("Shoha 2 on Mangetsu Combo", "Adds Shoha 2 when you have 3 meditation stacks to Mangetsu combo.", SAM.JobID)]
-        SAM_AoE_MangetsuCombo_Shoha2 = 15024,
+        [CustomComboInfo("Shoha on Mangetsu Combo", "Adds Shoha when you have 3 meditation stacks to Mangetsu combo.", SAM.JobID)]
+        SAM_AoE_MangetsuCombo_Shoha = 15024,
 
-        [ConflictingCombos(SAM_Kyuten_Shoha2_Guren)]
+        [ConflictingCombos(SAM_Kyuten_Shoha_Guren)]
         [ParentCombo(SAM_AoE_MangetsuCombo)]
         [CustomComboInfo("Guren on Mangetsu Combo", "Adds Guren when it's off cooldown and you have 25 Kenki to Mangetsu combo.", SAM.JobID)]
         SAM_AoE_MangetsuCombo_Guren = 15025,
@@ -3295,13 +3295,13 @@ namespace XIVSlothCombo.Combos
 
         #region Kyuten Features
         [ReplaceSkill(SAM.Kyuten)]
-        [CustomComboInfo("Kyuten to Shoha II", "Replace Hissatsu: Kyuten with Shoha II when Meditation is full.", SAM.JobID)]
-        SAM_Kyuten_Shoha2 = 15034,
+        [CustomComboInfo("Kyuten to Shoha", "Replace Hissatsu: Kyuten with Shoha when Meditation is full.", SAM.JobID)]
+        SAM_Kyuten_Shoha = 15034,
 
         [ConflictingCombos(SAM_AoE_MangetsuCombo_Guren)]
-        [ParentCombo(SAM_Kyuten_Shoha2)]
+        [ParentCombo(SAM_Kyuten_Shoha)]
         [CustomComboInfo("Kyuten to Guren", "Replace Hissatsu: Kyuten with Guren when its cooldown is up.", SAM.JobID)]
-        SAM_Kyuten_Shoha2_Guren = 15035,
+        SAM_Kyuten_Shoha_Guren = 15035,
         #endregion
 
         #region Other
